@@ -10,6 +10,7 @@ class Paciente extends BaseController
 
     public function index()
     {
+         session()->set('key','value');
         $model = new PacienteModel();
         $data['pacientes'] = $model->findAll();
         echo view('header');
@@ -36,12 +37,14 @@ class Paciente extends BaseController
         ];
 
         $model->insert($data);
-        return redirect()->to('paciente');
+        return redirect()->to('paciente')->with('mensaje','Se registro correctamente');
     }
 
 
     public function show($id)
     {
+
+       
         $model = new PacienteModel();
         $data['paciente'] = $model->find($id);
 
@@ -84,7 +87,8 @@ class Paciente extends BaseController
     {
         $model = new PacienteModel();
         $model->delete($id);
-         echo "delete";
+       session()->setFlashdata('mensaje','Registro eliminado correctamente');
+       return redirect()->back();
         // return redirect()->to(base_url().'paciente');
     }
 }
