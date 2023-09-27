@@ -34,11 +34,23 @@ class Validation extends BaseConfig
      * @var array<string, string>
      */
     public array $templates = [
-        'list'   => 'CodeIgniter\Validation\Views\list',
+        'list' => 'CodeIgniter\Validation\Views\list',
         'single' => 'CodeIgniter\Validation\Views\single',
     ];
 
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+    public $pacientes = [
+        'nombre' => 'required|min_length[3]|max_length[27]',
+        'apellido_p' => 'required|min_length[3]|max_length[27]',
+        'apellido_m' => 'required|min_length[3]|max_length[27]',
+        'direccion' => 'required|min_length[3]|max_length[27]',
+        'telefono' => 'required|min_length[3]|max_length[27]',
+
+
+    ];
+
+
+
 }

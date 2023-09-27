@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                 <a href="<?= base_url('paciente/new')  ?>" class="btn btn-success">Nuevo</a></p>
-              <?php echo session('key') ?>
+              
                <?php  echo view('partials/session')?>
                     <table id="datatablesSimple">
                         <thead>
